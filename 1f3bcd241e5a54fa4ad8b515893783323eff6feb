@@ -1,0 +1,6 @@
+Original bug report:
+<http://lists.freedesktop.org/archives/dbus/2008-October/010491.html>
+
+We must initialize the AVC before we call process_config_postinit(),
+because process_config_postinit() uses it to translate SELinux context
+names (like "foo_t") into machine-readable SIDs.
